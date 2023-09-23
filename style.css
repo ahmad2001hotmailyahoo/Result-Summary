@@ -1,0 +1,157 @@
+:root{
+    --LIGHT-RED: hsl(0, 100%, 94%);
+    --LGIHT-YELLOW: hsl(38, 100%, 96%);
+    --LIGHT-GREEN: hsl(165, 100%, 93%);
+    --LIGHT-BLUE: hsl(234, 100%, 92%);
+    --LIGHT-SLATE-BLUE: hsl(252, 100%, 67%);
+    --LIGHT-ROYAL-BLUE : hsl(241, 81%, 54%);
+    --VIOLENT-BLUE : hsla(256, 72%, 46%, 1);
+    --PERSIAN-BLUE :  hsla(241, 72%, 46%, 0);
+    --WHITE : hsl(221, 100%, 96%);
+    --LIGHT-LAVENDER: hsl(241, 100%, 89%);
+    --DARK-GRAY-BLUE: hsl(224, 30%, 27%);
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+}
+
+.main{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    box-shadow: 0px 0px 30px 30px rgba(195, 195, 195, 0.2);
+    border-radius: 10px;
+}
+
+div[data-containor="item_1"]{
+    background: linear-gradient(var(--LIGHT-SLATE-BLUE) 10%,var(--LIGHT-ROYAL-BLUE));
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;
+}
+
+div[data-containor="item_1"] :where(.result,.paragraph){
+    color:var(--WHITE);
+    font-weight: lighter;
+}
+
+div[data-containor="item_1"] .circle{
+    background:  conic-gradient(var(--VIOLENT-BLUE),var(--VIOLENT-BLUE));
+    border-radius: 70px;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    padding: 20px;
+}
+
+div[data-containor="item_1"] .bold{
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+div[data-containor="item_1"] .paragraph{
+    display: block;
+    width: 70%;
+    margin: auto;
+}
+
+div[data-containor="item_2"]{
+    padding: 10px;
+    width: 50%;
+    padding: 20px;
+}
+
+div[data-containor="item_2"] .reaction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: 12px 0;
+}
+
+.react{
+    display: flex;
+    align-items: center;
+}
+
+.react_header{
+    margin-left: 8px;
+}
+
+.react_1{
+    background-color: var(--LIGHT-RED);
+}
+
+.react_2{
+    background-color: var(--LGIHT-YELLOW);
+}
+
+.react_3{
+    background-color: var(--LIGHT-GREEN);
+}
+
+.react_4{
+    background-color: var(--LIGHT-BLUE);
+}
+
+.btn{
+    background: var(--DARK-GRAY-BLUE);
+    color: var(--WHITE);
+    border: transparent;
+    padding: 8px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1025px)  {
+    .main{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .main{
+        width: 90%;
+    }
+} 
+
+@media only screen and (max-width: 550px) {
+    .main{
+        display: block;
+        position: static;
+        transform: translate(0%,0%);
+        width: 100%;
+        height: 100%;
+    }
+    div[data-containor="item_1"],div[data-containor="item_2"]{
+        width: 100%;
+        padding: 20px 0;
+        border-radius: 30px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    div[data-containor="item_2"] :where(.reaction,.btn,.summary){
+        margin: 20px auto !important;
+    }
+    div[data-containor="item_2"] .reaction{
+        width: 80%;
+        padding: 20px;
+    }
+    .summary{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 90%;
+    }
+    .btn{
+        width: 90%;
+        padding: 20px;
+    }
+}
